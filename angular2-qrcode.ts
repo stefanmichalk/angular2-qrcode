@@ -2,6 +2,7 @@ import {
     NgModule,
     Component,
     Input,
+    Output,
     ElementRef,
     OnChanges,
     SimpleChanges
