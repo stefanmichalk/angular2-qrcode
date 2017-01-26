@@ -25,6 +25,8 @@ export class QRCodeComponent implements OnChanges {
     @Input() type: number = 4;
     @Input() level: string = 'M';
 
+    @Output() isReady: boolean = false;
+
 
     constructor(private elementRef: ElementRef) {
     }
@@ -41,6 +43,8 @@ export class QRCodeComponent implements OnChanges {
             let imgTagObject: HTMLImageElement = <HTMLImageElement> el.firstElementChild;
             imgTagObject.width = this.size;
             imgTagObject.height = this.size;
+            
+            this.isReady = true;
         } catch (e) {
             console.error(`Could not generate QR Code: ${e.message}`);
         }
